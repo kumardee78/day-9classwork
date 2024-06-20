@@ -4,15 +4,17 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0";
-    const options = {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "9e4505caadmshd0ccc38f8669f77p14772ejsnf3618d5eb0ba",
-        "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-      },
-    };
     async function fatchData() {
+      const url =
+        "https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0";
+      const options = {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "cb37fcbd97msh0a425bb86af165cp193d0cjsn587969efeec7",
+          "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+        },
+      };
       const response = await fetch(url, options);
       const result = await response.json();
       setData(result);
@@ -34,7 +36,9 @@ function App() {
     <>
       <div className="">
         <div className="px-10 py-2 bg-red-300 flex justify-between items-center">
-          <h1 className="text-xl text-red-900 bg-red-200 px-4 py-1 rounded-lg ">ExerciseDB</h1>
+          <h1 className="text-xl text-red-900 bg-red-200 px-4 py-1 rounded-lg ">
+            ExerciseDB
+          </h1>
           <input
             type="text"
             placeholder="Search Exercises..."
@@ -43,10 +47,9 @@ function App() {
           />
         </div>
         <h1 className="text-4xl font-bold py-12 text-center">
-            Awesome Exercises You Should Know
-          </h1>
+          Awesome Exercises You Should Know
+        </h1>
         <div className="flex flex-wrap gap-4 px-8">
-          
           {data.map((item, index) => {
             return (
               <>
